@@ -3,19 +3,19 @@
 To generate a project, run the following command:
 
 ```bash
-copier copy --trust "https://github.com/pawamoy/copier-pdm.git" /path/to/your/new/project
+copier copy --trust "https://github.com/davidciani/copier-pdm.git" /path/to/your/new/project
 ```
 
 Or with a shorter command:
 
 ```bash
-copier copy --trust "gh:pawamoy/copier-pdm" /path/to/your/new/project
+copier copy --trust "gh:davidciani/copier-pdm" /path/to/your/new/project
 ```
 
 You can even generate a project without installing copier, using `pipx`:
 
 ```bash
-pipx run copier copy --trust "gh:pawamoy/copier-pdm" /path/to/your/new/project
+pipx run copier copy --trust "gh:davidciani/copier-pdm" /path/to/your/new/project
 ```
 
 ## Questions
@@ -47,7 +47,7 @@ and use any character you want.
 ```
 Your full name
 author_fullname? Format: str
-🎤 [None]: Timothée Mazzucotelli
+🎤 [None]: David Ciani
 ```
 
 The full name will appear as "author" in the project's metadata.
@@ -57,7 +57,7 @@ The full name will appear as "author" in the project's metadata.
 ```
 Your email
 author_email? Format: str
-🎤 [None]: pawamoy@pm.me
+🎤 [None]: dciani@davidciani.com
 ```
 
 The email will appear as "author email" in the project's metadata.
@@ -67,7 +67,7 @@ The email will appear as "author email" in the project's metadata.
 ```
 Your username (e.g. on GitHub)
 author_username? Format: str
-🎤 [None]: pawamoy
+🎤 [None]: davidciani
 ```
 
 The username you are using on the git repository provider.
@@ -91,7 +91,7 @@ case we add support for more providers in the future.
 ```
 Your repository namespace
 repository_namespace? Format: str
-🎤 [pawamoy]: 
+🎤 [davidciani]: 
 ```
 
 The namespace (or account) on which the project will be stored.
@@ -113,7 +113,7 @@ It defaults to a slugified version of your project's name.
 ```
 The name of the person/entity holding the copyright
 copyright_holder? Format: str
-🎤 [Timothée Mazzucotelli]: 
+🎤 [David Ciani]: 
 ```
 
 The name of the person or entity holding the copyright on the project.
@@ -124,7 +124,7 @@ It defaults to the full name your provided.
 ```
 The email of the person/entity holding the copyright
 copyright_holder_email? Format: str
-🎤 [pawamoy@pm.me]: 
+🎤 [dciani@davidciani.com]: 
 ```
 
 The email of the person or entity holding the copyright on the project.

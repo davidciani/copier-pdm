@@ -444,7 +444,7 @@ Example of output:
 ```
 Test session starts (platform: linux, Python 3.8.6, pytest 6.2.1, pytest-sugar 0.9.4)
 Using --randomly-seed=281943462
-rootdir: /home/pawamoy/data/dev/pawamoy/duty, configfile: config/pytest.ini
+rootdir: /home/davidciani/data/dev/davidciani/duty, configfile: config/pytest.ini
 plugins: randomly-3.5.0, xdist-2.2.0, forked-1.3.0, cov-2.10.1, sugar-0.9.4
 collecting ... 
  tests/test_logic.py ✓✓✓✓✓✓✓✓✓✓✓✓                                          15% █▋        

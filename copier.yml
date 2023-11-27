@@ -26,17 +26,17 @@ project_description:
 author_fullname:
   type: str
   help: Your full name
-  default: "{{ 'Timothée Mazzucotelli' | git_user_name }}"
+  default: "{{ 'David Ciani' | git_user_name }}"
 
 author_email:
   type: str
   help: Your email
-  default: "{{ 'pawamoy@pm.me' | git_user_email }}"
+  default: "{{ 'dciani@davidciani.com' | git_user_email }}"
 
 author_username:
   type: str
   help: Your username (e.g. on GitHub)
-  default: pawamoy
+  default: davidciani
 
 repository_provider:
   type: str

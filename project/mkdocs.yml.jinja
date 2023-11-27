@@ -33,13 +33,13 @@ nav:
     - Installation: insiders/installation.md
     - Changelog: insiders/changelog.md
 {%- endif %}
-{%- if author_username == "pawamoy" %}
-- Author's website: https://{{ author_username }}.{{ repository_provider.rsplit('.', 1)[0] }}.io/
+{%- if author_username == "davidciani" %}
+- Author's website: https://davidciani.com
 {%- endif %}
 
 theme:
   name: material
-  {%- if author_username == "pawamoy" %}
+  {%- if author_username == "davidciani" %}
   custom_dir: docs/.overrides
   icon:
     logo: material/currency-sign
@@ -108,7 +108,7 @@ markdown_extensions:
 - pymdownx.tasklist:
     custom_checkbox: true
 - toc:
-    permalink: {% if author_username == "pawamoy" %}"¤"{% else %}true{% endif %}
+    permalink: {% if author_username == "davidciani" %}"¤"{% else %}true{% endif %}
 
 plugins:
 - search
@@ -158,11 +158,11 @@ extra:
   social:
   - icon: fontawesome/brands/{{ repository_provider.rsplit(".", 1)[0] }}
     link: https://{{ repository_provider }}/{{ author_username }}
-  {%- if author_username == "pawamoy" %}
+  {%- if author_username == "davidciani" %}
   - icon: fontawesome/brands/mastodon
-    link: https://fosstodon.org/@{{ author_username }}
+    link: https://mastodon.davidciani.com/@david
   - icon: fontawesome/brands/twitter
-    link: https://twitter.com/{{ author_username }}
+    link: https://twitter.com/davidciani
   {%- endif %}
   - icon: fontawesome/brands/gitter
     link: https://gitter.im/{{ repository_name }}/community

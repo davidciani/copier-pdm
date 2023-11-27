@@ -36,13 +36,13 @@ And the file looks like this:
 ```yaml
 # Changes here will be overwritten by Copier
 _commit: 0.1.10
-_src_path: gh:pawamoy/copier-pdm
-author_email: pawamoy@pm.me
-author_fullname: "Timothée Mazzucotelli"
-author_username: pawamoy
+_src_path: gh:davidciani/copier-pdm
+author_email: dciani@davidciani.com
+author_fullname: "David Ciani"
+author_username: davidciani
 copyright_date: '2020'
-copyright_holder: "Timothée Mazzucotelli"
-copyright_holder_email: pawamoy@pm.me
+copyright_holder: "David Ciani"
+copyright_holder_email: dciani@davidciani.com
 copyright_license: ISC License
 project_description: Automatic documentation from sources, for MkDocs.
 project_name: mkdocstrings
@@ -50,7 +50,7 @@ python_package_command_line_name: ""
 python_package_distribution_name: mkdocstrings
 python_package_import_name: mkdocstrings
 repository_name: mkdocstrings
-repository_namespace: pawamoy
+repository_namespace: davidciani
 repository_provider: github.com
 ```
 

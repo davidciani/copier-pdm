@@ -49,11 +49,11 @@ cp -rf . "${template}"
 
 for license in "${LICENSES[@]}"; do
   copier copy -f --trust "${template}" "${output}" \
-    -d project_name="Pawamoy Testing" \
+    -d project_name="davidciani Testing" \
     -d project_description='Testing this great template' \
-    -d author_fullname="Timothée Mazzucotelli" \
-    -d author_username="pawamoy" \
-    -d author_email="pawamoy@pm.me" \
+    -d author_fullname="David Ciani" \
+    -d author_username="davidciani" \
+    -d author_email="dciani@davidciani.com" \
     -d copyright_license="${license}" &>/dev/null
   (
     cd "${output}"

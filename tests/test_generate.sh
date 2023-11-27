@@ -14,7 +14,7 @@ generate "${PWD}" "${output}"
 cd "${output}"
 cat .copier-answers.yml
 git init .
-git remote add origin https://github.com/pawamoy/pawamoy-testing
+git remote add origin https://github.com/davidciani/davidciani-testing
 
 echo
 echo "///////////////////////////////////////////"
