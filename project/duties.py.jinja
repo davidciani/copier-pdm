@@ -20,14 +20,11 @@ PY_SRC = " ".join(PY_SRC_LIST)
 CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
 WINDOWS = os.name == "nt"
 PTY = not WINDOWS and not CI
-MULTIRUN = os.environ.get("PDM_MULTIRUN", "0") == "1"
 
 
 def pyprefix(title: str) -> str:  # noqa: D103
-    if MULTIRUN:
-        prefix = f"(python{sys.version_info.major}.{sys.version_info.minor})"
-        return f"{prefix:14}{title}"
     return title
+
 
 @duty
 def changelog(ctx: Context) -> None:
