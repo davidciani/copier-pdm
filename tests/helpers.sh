@@ -5,7 +5,5 @@ generate() {
     -d project_description='Testing this great template' \
     -d author_fullname="David Ciani" \
     -d author_username="davidciani" \
-    -d author_email="dciani@davidciani.com" \
-    -d insiders=true \
-    -d public_release=false
+    -d author_email="dciani@davidciani.com"
 }

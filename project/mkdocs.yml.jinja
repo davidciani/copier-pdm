@@ -26,13 +26,6 @@ nav:
   - Contributing: contributing.md
   - Code of Conduct: code_of_conduct.md
   - Coverage report: coverage.md
-{%- if insiders %}
-- Insiders:
-  - insiders/index.md
-  - Getting started:
-    - Installation: insiders/installation.md
-    - Changelog: insiders/changelog.md
-{%- endif %}
 {%- if author_username == "davidciani" %}
 - Author's website: https://davidciani.com
 {%- endif %}
@@ -83,9 +76,6 @@ theme:
 extra_css:
 - css/material.css
 - css/mkdocstrings.css
-{%- if insiders %}
-- css/insiders.css
-{%- endif %}
 
 markdown_extensions:
 - attr_list
@@ -149,10 +139,6 @@ plugins:
     type: timeago #}
 - minify:
     minify_html: !ENV [DEPLOY, false]
-- group:
-    enabled: !ENV [MATERIAL_INSIDERS, false]
-    plugins:
-    - typeset
 
 extra:
   social:
