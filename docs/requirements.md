@@ -24,10 +24,10 @@ export PYENV_ROOT="${HOME}/.pyenv"
 eval "$(pyenv init -)"
 
 # install Python 3
-pyenv install 3.8.6
+pyenv install 3.12
 
 # make it available globally
-pyenv global system 3.8.6
+pyenv global system 3.12
 
 # finally, restart your shell
 # to make sure your environment is up-to-date

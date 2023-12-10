@@ -51,7 +51,7 @@ To specify which Python versions you would like to work with,
 define the `PDM_MULTIRUN_VERSIONS` environment variable:
 
 ```bash
-export PDM_MULTIRUN_VERSIONS="3.10 3.11 3.12"
+export PDM_MULTIRUN_VERSIONS="3.12"
 ```
 
 By default it is set to active versions of Python
@@ -122,10 +122,6 @@ pdm config venv.in_project false
 Then create some virtualenvs:
 
 ```bash
-pdm venv create 3.8
-pdm venv create 3.9
-pdm venv create 3.10
-pdm venv create 3.11
 pdm venv create 3.12
 ```
 
