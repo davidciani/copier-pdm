@@ -1,0 +1,66 @@
+[project]
+name = "davidciani-copier-pdm"
+description = "Copier for Python projects managed by PDM."
+authors = [
+    {name = "David Ciani", email = "dciani@davidciani.com"},
+]
+dependencies = []
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "ISC"}
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://davidciani.githib.io/copier-pdm"
+Documentation = "https://davidciani.githib.io/copier-pdm"
+Changelog = "https://davidciani.githib.io/copier-pdm/changelog"
+Repository = "https://github.com/davidciani/copier-pdm"
+Issues = "https://github.com/davidciani/copier-pdm/issues"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+version = {source = "scm"}
+
+
+[tool.pdm.dev-dependencies]
+duty = ["duty>=0.10"]
+ci-quality = ["davidciani-copier-pdm[duty,docs,quality,typing,security]"]
+ci-tests = ["davidciani-copier-pdm[duty,tests]"]
+docs = [
+    "black>=23.9",
+    "markdown-callouts>=0.3",
+    "markdown-exec>=1.7",
+    "mkdocs>=1.5",
+    "mkdocs-coverage>=1.0",
+    "mkdocs-gen-files>=0.5",
+    "mkdocs-git-committers-plugin-2>=1.2",
+    "mkdocs-literate-nav>=0.6",
+    "mkdocs-material>=9.4",
+    "mkdocs-minify-plugin>=0.7",
+    "mkdocstrings[python]>=0.23",
+]
+maintain = [
+    "black>=23.9",
+    "blacken-docs>=1.16",
+    "git-changelog>=2.3",
+]
+quality = [
+    "ruff>=0.0",
+]
+tests = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-randomly>=3.15",
+    "pytest-xdist>=3.3",
+]
+typing = [
+    "mypy>=1.5",
+    "types-markdown>=3.5",
+    "types-pyyaml>=6.0",
+]
+security = [
+    "safety>=2.3",
+]
