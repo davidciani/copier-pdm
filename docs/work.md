@@ -26,7 +26,6 @@ The generated project has this structure:
 ├── 📄 duties.py ------------------ # the project's tasks
 ├── 📄 LICENSE -------------------- # 
 ├── 📄 Makefile ------------------- # 
-├── 📄 mkdocs.insiders.yml -------- # 
 ├── 📄 mkdocs.yml ----------------- # docs configuration
 ├── 📄 pyproject.toml ------------- # project metadata and dependencies
 ├── 📄 README.md ------------------ # 
