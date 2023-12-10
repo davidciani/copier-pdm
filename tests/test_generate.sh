@@ -50,7 +50,7 @@ make --no-print-directory test
 echo
 echo ">>> Creating second commit (fix)"
 touch empty
-git add empty
+git add -A .
 git commit -m "fix: Fix all bugs"
 echo
 echo ">>> Updating changelog and releasing version"
@@ -67,4 +67,6 @@ echo "///////////////////////////////////////////"
 echo "             UPDATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
+pwd
+git status
 copier update -f --trust

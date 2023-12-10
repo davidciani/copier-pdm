@@ -7,12 +7,5 @@ if ! command -v pdm &>/dev/null; then
     fi
     pipx install pdm
 fi
-if ! pdm self list 2>/dev/null | grep -q pdm-multirun; then
-    pdm install --plugins
-fi
 
-if [ -n "${PDM_MULTIRUN_VERSIONS}" ]; then
-    pdm multirun -v pdm install -G:all
-else
-    pdm install -G:all
-fi
+pdm install -G:all

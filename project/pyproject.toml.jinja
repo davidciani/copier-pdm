@@ -117,7 +117,6 @@ Funding = "https://{{ repository_provider }}/sponsors/{{ author_username }}"
 [tool.pdm]
 version = {source = "scm"}
 plugins = [
-    "pdm-multirun",
 ]
 
 [tool.pdm.build]
@@ -141,7 +140,6 @@ docs = [
     "mkdocs-material>=9.4",
     "mkdocs-minify-plugin>=0.7",
     "mkdocstrings[python]>=0.23",
-    "tomli>=2.0; python_version < '3.11'",
 ]
 maintain = [
     "black>=23.9",
