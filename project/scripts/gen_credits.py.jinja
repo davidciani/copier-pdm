@@ -93,7 +93,7 @@ def _render_credits() -> str:
         "project_name": project_name,
         "prod_dependencies": sorted(prod_dependencies.values(), key=lambda dep: dep["name"]),
         "dev_dependencies": sorted(dev_dependencies.values(), key=lambda dep: dep["name"]),
-        # "more_credits": "{% if author_username == "davidciani" %}http://davidciani.github.io/credits/{% endif %}",
+        "more_credits": None, #"{% if author_username == "davidciani" %}http://davidciani.github.io/credits/{% endif %}",
     }
     template_text = dedent(
         """{% raw %}
