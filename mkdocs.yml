@@ -84,8 +84,6 @@ extra:
     link: https://mastodon.davidciani.com/@david
   - icon: fontawesome/brands/twitter
     link: https://twitter.com/davidciani
-  - icon: fontawesome/brands/gitter
-    link: https://app.gitter.im/#/room/#copier-pdm/community:gitter.im
 
 extra_css:
   - css/custom.css
