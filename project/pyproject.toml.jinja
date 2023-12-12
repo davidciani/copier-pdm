@@ -75,7 +75,7 @@ license = {text = "
     Zlib
     {%- endif %}"}
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 keywords = []
 dynamic = ["version"]
 classifiers = [
@@ -84,10 +84,6 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Documentation",
     "Topic :: Software Development",
@@ -121,8 +117,6 @@ editable-backend = "editables"
 
 [tool.pdm.dev-dependencies]
 duty = ["duty>=0.10"]
-ci-quality = ["{{ python_package_distribution_name }}[duty,docs,quality,typing,security]"]
-ci-tests = ["{{ python_package_distribution_name }}[duty,tests]"]
 docs = [
     "black>=23.9",
     "markdown-callouts>=0.3",
