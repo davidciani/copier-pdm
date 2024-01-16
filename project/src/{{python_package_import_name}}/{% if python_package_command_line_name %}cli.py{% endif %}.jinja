@@ -15,16 +15,24 @@ from __future__ import annotations
 
 import argparse
 import sys
-from typing import Any
+from typing import Any, Self
 
 from {{ python_package_import_name }} import debug
 
 
 class _DebugInfo(argparse.Action):
-    def __init__(self, nargs: int | str | None = 0, **kwargs: Any) -> None:
+    def __init__(
+            self: Self,
+            nargs: int | str | None = 0,
+            **kwargs: Any, # noqa: ANN401
+            ) -> None:
         super().__init__(nargs=nargs, **kwargs)
 
-    def __call__(self, *args: Any, **kwargs: Any) -> None:  # noqa: ARG002
+    def __call__(
+            self: Self,
+            *args: Any, # noqa: ANN401, ARG002
+            **kwargs: Any, # noqa: ANN401, ARG002
+            ) -> None:
         debug.print_debug_info()
         sys.exit(0)
 
@@ -36,15 +44,26 @@ def get_parser() -> argparse.ArgumentParser:
         An argparse parser.
     """
     parser = argparse.ArgumentParser(prog="{{ python_package_command_line_name }}")
-    parser.add_argument("-V", "--version", action="version", version=f"%(prog)s {debug.get_version()}")
-    parser.add_argument("--debug-info", action=_DebugInfo, help="Print debug information.")
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version=f"%(prog)s {debug.get_version()}",
+        )
+    parser.add_argument(
+        "--debug-info",
+        action=_DebugInfo,
+        help="Print debug information.",
+        )
     return parser
 
 
 def main(args: list[str] | None = None) -> int:
     """Run the main program.
 
-    This function is executed when you type `{{ python_package_command_line_name }}` or `python -m {{ python_package_import_name }}`.
+    This function is executed when you type
+    `{{ python_package_command_line_name }}` or `python -m
+    {{ python_package_import_name }}`.
 
     Parameters:
         args: Arguments passed from the command line.

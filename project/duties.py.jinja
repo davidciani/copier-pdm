@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from duty import duty
-from duty.callables import black, coverage, lazy, mkdocs, mypy, pytest, ruff, safety
+from duty.callables import coverage, lazy, mkdocs, mypy, pytest, ruff, safety
 
 if TYPE_CHECKING:
     from duty.context import Context
@@ -38,7 +38,8 @@ def changelog(ctx: Context) -> None:
     ctx.run(git_changelog, args=[[]], title="Updating changelog")
 
 
-@duty(pre=["check_quality", "check_types", "check_docs", "check_dependencies", "check-api"])
+@duty(pre=["check_quality", "check_types", "check_docs",
+           "check_dependencies", "check-api"])
 def check(ctx: Context) -> None:  # noqa: ARG001
     """Check it all!
 
@@ -55,9 +56,9 @@ def check_quality(ctx: Context) -> None:
         ctx: The context instance (passed automatically).
     """
     ctx.run(
-        ruff.check(*PY_SRC_LIST, config="config/ruff.toml"),
+        ruff.check(*PY_SRC_LIST),
         title=pyprefix("Checking code quality"),
-        command=f"ruff check --config config/ruff.toml {PY_SRC}",
+        command=f"ruff check {PY_SRC}",
     )
 
 
@@ -106,9 +107,9 @@ def check_types(ctx: Context) -> None:
         ctx: The context instance (passed automatically).
     """
     ctx.run(
-        mypy.run(*PY_SRC_LIST, config_file="config/mypy.ini"),
+        mypy.run(*PY_SRC_LIST),
         title=pyprefix("Type-checking"),
-        command=f"mypy --config-file config/mypy.ini {PY_SRC}",
+        command=f"mypy {PY_SRC}",
     )
 
 
@@ -178,22 +179,16 @@ def docs_deploy(ctx: Context) -> None:
 
 
 @duty
-def format(ctx: Context) -> None:
+def format(ctx: Context) -> None: # noqa: A001
     """Run formatting tools on the code.
 
     Parameters:
         ctx: The context instance (passed automatically).
     """
     ctx.run(
-        ruff.check(*PY_SRC_LIST, config="config/ruff.toml", fix_only=True, exit_zero=True),
+        ruff.check(*PY_SRC_LIST, fix_only=True, exit_zero=True),
         title="Auto-fixing code",
     )
-    ctx.run(black.run(*PY_SRC_LIST, config="config/black.toml"), title="Formatting code")
-    {#- ctx.run(
-        blacken_docs.run(*PY_SRC_LIST, "docs", exts=["py", "md"], line_length=120),
-        title="Formatting docs",
-        nofail=True,
-    ) #}
 
 
 @duty{% if not testing %}(post=["docs-deploy"]){% endif %}
@@ -205,7 +200,12 @@ def release(ctx: Context, version: str) -> None:
         version: The new version number to use.
     """
     ctx.run("git add pyproject.toml CHANGELOG.md", title="Staging files", pty=PTY)
-    ctx.run(["git", "commit", "-m", f"chore: Prepare release {version}"], title="Committing changes", pty=PTY)
+    ctx.run(["git",
+             "commit",
+             "-m",
+             f"chore: Prepare release {version}"],
+             title="Committing changes",
+             pty=PTY)
     ctx.run(f"git tag {version}", title="Tagging commit", pty=PTY)
     {%- if not testing %}
     ctx.run("git push", title="Pushing commits", pty=False)
@@ -223,8 +223,8 @@ def cov(ctx: Context) -> None:
         ctx: The context instance (passed automatically).
     """
     ctx.run(coverage.combine, nofail=True)
-    ctx.run(coverage.report(rcfile="config/coverage.ini"), capture=False)
-    ctx.run(coverage.html(rcfile="config/coverage.ini"))
+    ctx.run(coverage.report(), capture=False)
+    ctx.run(coverage.html())
 
 
 @duty
@@ -238,9 +238,9 @@ def test(ctx: Context, match: str = "") -> None:
     py_version = f"{sys.version_info.major}{sys.version_info.minor}"
     os.environ["COVERAGE_FILE"] = f".coverage.{py_version}"
     ctx.run(
-        pytest.run("-n", "auto", "tests", config_file="config/pytest.ini", select=match, color="yes"),
+        pytest.run("-n", "auto", "tests", select=match, color="yes"),
         title=pyprefix("Running tests"),
-        command=f"pytest -c config/pytest.ini -n auto -k{match!r} --color=yes tests",
+        command=f"pytest -n auto -k{match!r} --color=yes tests",
     )
 
 
