@@ -344,11 +344,24 @@ convention = "google"
 
 [tool.git-changelog]
 bump = "auto"
-convention = "basic"
+convention = "conventional"
 in-place = true
 output = "CHANGELOG.md"
 parse-refs = false
 parse-trailers = true
-sections = ["add", "fix", "change", "remove", "merge","doc"]
-template = "keepachangelog"
+sections = [
+  "feat",
+  "fix",
+  "perf",
+  "ref",
+  "doc",
+  "revert",
+  "tests",
+  "build",
+  "deps",
+  "chore",
+  "ci",
+  "style"
+  ]
+template = "angular"
 
