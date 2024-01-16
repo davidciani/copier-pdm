@@ -216,6 +216,11 @@ filterwarnings =[
   "ignore:.*rsyncdir:DeprecationWarning:xdist"
 ]
 
+[tool.mypy]
+ignore_missing_imports = true
+exclude = "tests/fixtures/"
+warn_unused_ignores = true
+show_error_codes = true
 
 [tool.ruff.lint]
 select = [
